@@ -1,4 +1,6 @@
 import Layout from "../../components/layout/Layout";
+import reactjs_icon from "../../assets/icons/reactjs.svg";
+import tailwind_icon from "../../assets/icons/tailwind.svg";
 
 const Home = () => {
   const title = (
@@ -19,18 +21,8 @@ const Home = () => {
         <div className="flex justify-between items-center">
           <p>my portfolio</p>
           <div className="flex space-x-2">
-            <img
-              src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/FrontendDevelopment/reactjs.svg"
-              alt="stack"
-              width={25}
-              height={25}
-            />
-            <img
-              src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/FrontendDevelopment/tailwind.svg"
-              alt="stack"
-              width={25}
-              height={25}
-            />
+            <img src={reactjs_icon} alt="stack" width={25} height={25} />
+            <img src={tailwind_icon} alt="stack" width={25} height={25} />
           </div>
         </div>
       </li>
