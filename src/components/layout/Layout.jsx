@@ -1,5 +1,4 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import Sosmed from "../sosmed/Sosmed";
 
 const Layout = ({ title, content }) => {
   return (
@@ -8,22 +7,7 @@ const Layout = ({ title, content }) => {
       <hr className="border-[2px] border-borderCol my-4" />
       {content}
       <hr className="border-[2px] border-borderCol my-4" />
-      <div className="space-x-2">
-        <Link to="/" className="text-links font-semibold hover:underline">
-          Portfolio
-        </Link>
-        <span>|</span>
-        <Link className="text-links font-semibold hover:underline" to="/blog">
-          Blog
-        </Link>
-        <span>|</span>
-        <Link
-          className="text-links font-semibold hover:underline"
-          to="/contact"
-        >
-          Contact
-        </Link>
-      </div>
+      <Sosmed />
     </div>
   );
 };

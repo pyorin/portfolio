@@ -8,6 +8,14 @@ const Contact = () => {
       <li>
         <a
           className="text-links font-semibold hover:underline"
+          href="https://github.com/pyorin"
+        >
+          Github
+        </a>
+      </li>
+      <li>
+        <a
+          className="text-links font-semibold hover:underline"
           href="mailto:maulani.morningstar@gmail.com"
         >
           Email
@@ -24,11 +32,7 @@ const Contact = () => {
     </ul>
   );
 
-  return (
-    <div>
-      <Layout title={title} content={content} />
-    </div>
-  );
+  return <Layout title={title} content={content} />;
 };
 
 export default Contact;

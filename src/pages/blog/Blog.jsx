@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 
 const Blog = () => {
   const title = (
-    <div>
+    <>
       <h1 className="text-2xl font-semibold">Blog</h1>
       <input
         type="text"
         className="w-full rounded-md border-[2px] border-borderCol bg-background px-3 py-1 mt-4 outline-none"
         placeholder="search"
       />
-    </div>
+    </>
   );
 
   const content = (
@@ -34,11 +34,7 @@ const Blog = () => {
     </ul>
   );
 
-  return (
-    <div>
-      <Layout title={title} content={content} />
-    </div>
-  );
+  return <Layout title={title} content={content} />;
 };
 
 export default Blog;

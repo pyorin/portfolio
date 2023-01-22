@@ -37,11 +37,7 @@ const Home = () => {
     </ul>
   );
 
-  return (
-    <div>
-      <Layout title={title} content={content} />
-    </div>
-  );
+  return <Layout title={title} content={content} />;
 };
 
 export default Home;

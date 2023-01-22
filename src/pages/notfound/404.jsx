@@ -2,16 +2,10 @@ import Layout from "../../components/layout/Layout";
 
 const Notfound = () => {
   const content = (
-    <div>
-      <h1 className="text-2xl font-semibold text-center">404 not found</h1>
-    </div>
+    <h1 className="text-2xl font-semibold text-center">404 not found</h1>
   );
 
-  return (
-    <div>
-      <Layout content={content} />
-    </div>
-  );
+  return <Layout content={content} />;
 };
 
 export default Notfound;
