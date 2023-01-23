@@ -1,34 +1,17 @@
 import Layout from "../../components/layout/Layout";
+import ContactComp from "../../components/contact/ContactComp";
 
 const Contact = () => {
   const title = <h1 className="text-2xl font-semibold">Contact</h1>;
 
   const content = (
     <ul className="list-disc px-7">
-      <li>
-        <a
-          className="text-links font-semibold hover:underline"
-          href="https://github.com/pyorin"
-        >
-          Github
-        </a>
-      </li>
-      <li>
-        <a
-          className="text-links font-semibold hover:underline"
-          href="mailto:maulani.morningstar@gmail.com"
-        >
-          Email
-        </a>
-      </li>
-      <li>
-        <a
-          className="text-links font-semibold hover:underline"
-          href="https://discord.com/users/647262308342693888"
-        >
-          Discord
-        </a>
-      </li>
+      <ContactComp link="https://github.com/pyorin" sosmed="Github" />
+      <ContactComp link="mailto:maulani.morningstar@gmail.com" sosmed="Email" />
+      <ContactComp
+        link="https://discord.com/users/647262308342693888"
+        sosmed="Discord"
+      />
     </ul>
   );
 

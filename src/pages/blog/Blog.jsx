@@ -1,5 +1,5 @@
 import Layout from "../../components/layout/Layout";
-import { Link } from "react-router-dom";
+import BlogCard from "../../components/blogcard/BlogCard";
 
 const Blog = () => {
   const title = (
@@ -14,24 +14,11 @@ const Blog = () => {
   );
 
   const content = (
-    <ul className="list-disc px-7 space-y-2">
-      <li>
-        <div className="flex justify-between items-center">
-          <Link
-            to="/blog/1"
-            className="text-links font-semibold hover:underline"
-          >
-            First Post
-          </Link>
-          <p className="text-sm font-semibold">21 Jan 2023</p>
-        </div>
-        <p className="md:w-[520px] mt-2 md:mt-0">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-          velit corporis ipsum inventore doloribus explicabo porro obcaecati hic
-          quidem iusto?
-        </p>
-      </li>
-    </ul>
+    <BlogCard
+      title="First Post"
+      date="21 Jan 2023"
+      description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae velit corporis ipsum inventore doloribus explicabo porro obcaecati hic quidem iusto?"
+    />
   );
 
   return <Layout title={title} content={content} />;
