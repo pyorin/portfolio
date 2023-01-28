@@ -7,7 +7,7 @@ const Contact = () => {
   const content = (
     <ul className="list-disc px-7">
       <ContactComp link="https://github.com/pyorin" sosmed="Github" />
-      <ContactComp link="mailto:maulani.morningstar@gmail.com" sosmed="Email" />
+      <ContactComp link="" sosmed="Email" />
       <ContactComp
         link="https://discord.com/users/647262308342693888"
         sosmed="Discord"
