@@ -29,18 +29,20 @@ const Blog = () => {
 
   const content = (
     <>
-      {blog && blog.length > 0
-        ? blog.map((blog, i) => {
-            return (
-              <BlogCard
-                title={blog.title}
-                date="21 Jan 2023"
-                description={blog.description}
-                key={i}
-              />
-            );
-          })
-        : null}
+      {blog && blog.length > 0 ? (
+        blog.map((blog, i) => {
+          return (
+            <BlogCard
+              title={blog.title}
+              date="21 Jan 2023"
+              description={blog.description}
+              key={i}
+            />
+          );
+        })
+      ) : (
+        <h1 className="text-center">Loading...</h1>
+      )}
     </>
   );
 
