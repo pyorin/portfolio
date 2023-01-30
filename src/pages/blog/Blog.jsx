@@ -1,7 +1,21 @@
 import Layout from "../../components/layout/Layout";
 import BlogCard from "../../components/blogcard/BlogCard";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const Blog = () => {
+  const [blog, setBlog] = useState([]);
+
+  const fetchApi = async () => {
+    await axios
+      .get("https://lavender-foal-kit.cyclic.app/api/blog")
+      .then((d) => setBlog(d.data));
+  };
+
+  useEffect(() => {
+    fetchApi();
+  }, []);
+
   const title = (
     <>
       <h1 className="text-2xl font-semibold">Blog</h1>
@@ -14,11 +28,20 @@ const Blog = () => {
   );
 
   const content = (
-    <BlogCard
-      title="First Post"
-      date="21 Jan 2023"
-      description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae velit corporis ipsum inventore doloribus explicabo porro obcaecati hic quidem iusto?"
-    />
+    <>
+      {blog && blog.length > 0
+        ? blog.map((blog, i) => {
+            return (
+              <BlogCard
+                title={blog.title}
+                date="21 Jan 2023"
+                description={blog.description}
+                key={i}
+              />
+            );
+          })
+        : null}
+    </>
   );
 
   return <Layout title={title} content={content} />;
