@@ -1,33 +1,51 @@
 import Layout from "../../components/layout/Layout";
-import reactjs_icon from "../../assets/icons/reactjs.svg";
-import tailwind_icon from "../../assets/icons/tailwind.svg";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+  const [portfolio, setPortfolio] = useState([]);
+
+  const fetchApi = async () => {
+    await axios
+      .get("https://lavender-foal-kit.cyclic.app/api/projects")
+      .then((d) => setPortfolio(d.data));
+  };
+
+  useEffect(() => {
+    fetchApi();
+  }, []);
+
   const title = (
     <h1 className="text-2xl font-semibold">Hello 👋, I'm Herlangga</h1>
   );
 
-  const content = (
-    <ul className="list-disc px-7 space-y-2">
-      <li>
-        <a
-          className="text-links font-semibold hover:underline"
-          href="https://github.com/pyorin/portfolio"
-          target="_blank"
-          rel="noreferrer"
-        >
-          portfolio
-        </a>
-        <div className="flex justify-between items-center">
-          <p>my portfolio</p>
-          <div className="flex space-x-2">
-            <img src={reactjs_icon} alt="stack" width={25} height={25} />
-            <img src={tailwind_icon} alt="stack" width={25} height={25} />
-          </div>
-        </div>
-      </li>
-    </ul>
-  );
+  const content =
+    portfolio && portfolio.length > 0 ? (
+      <ul className="list-disc px-7 space-y-2">
+        {portfolio.map((portfolio, i) => (
+          <li key={i}>
+            <a
+              className="text-links font-semibold hover:underline"
+              href={portfolio.links}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {portfolio.title}
+            </a>
+            <div className="flex justify-between items-center">
+              <p>{portfolio.description}</p>
+              <div className="flex justify-end flex-wrap gap-2">
+                {portfolio.stack.map((stack, i) => (
+                  <img key={i} src={stack} alt="stack" width={25} height={25} />
+                ))}
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <h1>bntr loading...</h1>
+    );
 
   return <Layout title={title} content={content} />;
 };

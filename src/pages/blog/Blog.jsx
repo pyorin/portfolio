@@ -1,20 +1,20 @@
 import Layout from "../../components/layout/Layout";
 import BlogCard from "../../components/blogcard/BlogCard";
-import axios from "axios";
-import { useEffect, useState } from "react";
+// import axios from "axios";
+// import { useEffect, useState } from "react";
 
 const Blog = () => {
-  const [blog, setBlog] = useState([]);
+  // const [blog, setBlog] = useState([]);
 
-  const fetchApi = async () => {
-    await axios
-      .get("https://lavender-foal-kit.cyclic.app/api/blog")
-      .then((d) => setBlog(d.data));
-  };
+  // const fetchApi = async () => {
+  //   await axios
+  //     .get("https://lavender-foal-kit.cyclic.app/api/blog")
+  //     .then((d) => setBlog(d.data));
+  // };
 
-  useEffect(() => {
-    fetchApi();
-  }, []);
+  // useEffect(() => {
+  //   fetchApi();
+  // }, []);
 
   const title = (
     <>
@@ -27,23 +27,27 @@ const Blog = () => {
     </>
   );
 
+  // {blog && blog.length > 0 ? (
+  //   blog.map((blog, i) => {
+  //     return (
+  // <BlogCard
+  //   title={blog.title}
+  //   date="21 Jan 2023"
+  //   description={blog.description}
+  //   key={i}
+  // />;
+  //     );
+  //   })
+  // ) : (
+  //   <h1 className="text-center">Loading...</h1>
+  // )}
+  //
   const content = (
-    <>
-      {blog && blog.length > 0 ? (
-        blog.map((blog, i) => {
-          return (
-            <BlogCard
-              title={blog.title}
-              date="21 Jan 2023"
-              description={blog.description}
-              key={i}
-            />
-          );
-        })
-      ) : (
-        <h1 className="text-center">Loading...</h1>
-      )}
-    </>
+    <BlogCard
+      title="First Post"
+      date="21 Jan 2023"
+      description="ini postingan pertama"
+    />
   );
 
   return <Layout title={title} content={content} />;
