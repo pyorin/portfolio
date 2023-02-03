@@ -1,6 +1,7 @@
 import Layout from "../../components/layout/Layout";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Loading from "../../assets/images/loading.gif";
 
 const Home = () => {
   const [portfolio, setPortfolio] = useState([]);
@@ -44,7 +45,10 @@ const Home = () => {
         ))}
       </ul>
     ) : (
-      <h1>bntr loading...</h1>
+      <>
+        <h1 className="text-center mb-4">Loading...</h1>
+        <img src={Loading} alt="loading" className="mx-auto rounded-md" />
+      </>
     );
 
   return <Layout title={title} content={content} />;
