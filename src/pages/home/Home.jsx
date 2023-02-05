@@ -34,7 +34,7 @@ const Home = () => {
               {portfolio.title}
             </a>
             <div className="flex justify-between items-center">
-              <p>{portfolio.description}</p>
+              <p className="md:w-[380px]">{portfolio.description}</p>
               <div className="flex justify-end flex-wrap gap-2">
                 {portfolio.stack.map((stack, i) => (
                   <img key={i} src={stack} alt="stack" width={25} height={25} />
