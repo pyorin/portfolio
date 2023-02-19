@@ -47,11 +47,7 @@ const Home = () => {
     ) : (
       <>
         <h1 className="text-center mb-4">Loading...</h1>
-        <img
-          src="https://media.tenor.com/Mj5vyem2vmoAAAAM/akatsuki-log-horizon.gif"
-          alt="loading"
-          className="mx-auto rounded-md"
-        />
+        <img src={Loading} alt="loading" className="mx-auto rounded-md" />
       </>
     );
 
