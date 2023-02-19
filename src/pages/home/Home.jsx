@@ -33,9 +33,9 @@ const Home = () => {
             >
               {portfolio.title}
             </a>
-            <div className="flex justify-between">
+            <div className="flex items-center justify-between">
               <p className="md:w-[370px]">{portfolio.description}</p>
-              <div className="flex justify-end items-center flex-wrap gap-2">
+              <div className="flex flex-wrap justify-end">
                 {portfolio.stack.map((stack, i) => (
                   <img key={i} src={stack} alt="stack" width={25} height={25} />
                 ))}
@@ -47,7 +47,11 @@ const Home = () => {
     ) : (
       <>
         <h1 className="text-center mb-4">Loading...</h1>
-        <img src={Loading} alt="loading" className="mx-auto rounded-md" />
+        <img
+          src="https://media.tenor.com/Mj5vyem2vmoAAAAM/akatsuki-log-horizon.gif"
+          alt="loading"
+          className="mx-auto rounded-md"
+        />
       </>
     );
 
